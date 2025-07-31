@@ -17,13 +17,13 @@
       margin-bottom: 40px;
     }
     .gallery {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(2, 320px);
+      gap: 40px 40px;
       justify-content: center;
-      gap: 40px;
-      flex-wrap: wrap;
+      /* auto-rows: ustalamy wysokość, ale img ma fixed height, więc jest ok */
     }
     .photo {
-      max-width: 320px;
       text-align: center;
     }
     .photo img {
@@ -66,19 +66,11 @@
   <h1>🐦 Galeria Ptoszków, mój królu 👑</h1>
 
   <div class="gallery">
-    <div class="photo">
-      <img src="ptoszek1.png" alt="Ptoszek 1" />
-    </div>
-    <div class="photo">
-      <img src="ptoszek2.png" alt="Ptoszek 2" />
-    </div>
-    <div class="photo">
-      <img src="ptoszek3.png" alt="Ptoszek 3" />
-    </div>
-    <div class="photo">
-      <img src="ptoszek4.png" alt="Ptoszek 4" />
-    </div>
-    <div class="photo">
+    <div class="photo"><img src="ptoszek1.png" alt="Ptoszek 1" /></div>
+    <div class="photo"><img src="ptoszek2.png" alt="Ptoszek 2" /></div>
+    <div class="photo"><img src="ptoszek3.png" alt="Ptoszek 3" /></div>
+    <div class="photo"><img src="ptoszek4.png" alt="Ptoszek 4" /></div>
+    <div class="photo" style="grid-column: 1 / -1; margin-top: 40px;">
       <img src="ptoszek5.png" alt="Ptoszek 5" />
     </div>
   </div>
