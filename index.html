@@ -2,23 +2,38 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ptoszek2 – Galeria ptoszków</title>
   <style>
     body {
       background-color: white;
-      font-family: sans-serif;
+      font-family: Arial, sans-serif;
       text-align: center;
       padding: 30px;
     }
     h1 {
       margin-bottom: 40px;
     }
-    .gallery img {
-      margin: 10px;
+    .gallery {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .photo {
+      max-width: 320px;
+      text-align: center;
+    }
+    .photo img {
+      width: 100%;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      width: 300px;
+      margin-bottom: 10px;
+    }
+    .caption {
+      font-weight: bold;
+      font-size: 18px;
+      color: #333;
     }
   </style>
 </head>
@@ -26,8 +41,14 @@
   <h1>🐦 Galeria Ptoszków, mój królu 👑</h1>
 
   <div class="gallery">
-    <img src="ptoszek1.png" alt="Ptoszek 1" />
-    <img src="ptoszek2.png" alt="Ptoszek 2" />
+    <div class="photo">
+      <img src="ptoszek1.png" alt="Ptoszek 1" />
+      <div class="caption">Ptoszek 1 - Wesoły skrzydlaty</div>
+    </div>
+    <div class="photo">
+      <img src="ptoszek2.png" alt="Ptoszek 2" />
+      <div class="caption">Ptoszek 2 - Tajemniczy lotnik</div>
+    </div>
   </div>
 </body>
 </html>
