@@ -18,12 +18,9 @@
     }
     .gallery {
       display: grid;
-      grid-template-columns: repeat(2, 320px);
-      gap: 40px 40px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
       justify-content: center;
-    }
-    .photo {
-      text-align: center;
     }
     .photo img {
       height: 250px;
@@ -34,26 +31,34 @@
       display: block;
       transition: filter 0.3s;
     }
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
+
+    /* Przycisk w rogu */
+    #toggleMode {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 999;
+      padding: 10px 18px;
+      font-size: 14px;
       border: none;
       border-radius: 8px;
       background-color: #222;
       color: white;
-      margin-bottom: 30px;
+      cursor: pointer;
       transition: background-color 0.3s, color 0.3s;
     }
-    /* Dark mode style */
+
+    /* Tryb ciemny */
     body.dark-mode {
       background-color: #121212;
       color: #eee;
     }
-    body.dark-mode button {
+
+    body.dark-mode #toggleMode {
       background-color: #eee;
       color: #121212;
     }
+
     body.dark-mode .photo img {
       filter: brightness(0.85);
       box-shadow: 0 4px 12px rgba(255,255,255,0.2);
@@ -69,20 +74,15 @@
     <div class="photo"><img src="ptoszek2.png" alt="Ptoszek 2" /></div>
     <div class="photo"><img src="ptoszek3.png" alt="Ptoszek 3" /></div>
     <div class="photo"><img src="ptoszek4.png" alt="Ptoszek 4" /></div>
-    <div class="photo" style="grid-column: 1 / -1; margin-top: 40px;">
-      <img src="ptoszek5.png" alt="Ptoszek 5" />
-    </div>
+    <div class="photo"><img src="ptoszek5.png" alt="Ptoszek 5" /></div>
+    <!-- Dodaj tu więcej ptoszków -->
   </div>
 
   <script>
     const button = document.getElementById('toggleMode');
     button.addEventListener('click', () => {
       document.body.classList.toggle('dark-mode');
-      if(document.body.classList.contains('dark-mode')) {
-        button.textContent = 'Tryb jasny';
-      } else {
-        button.textContent = 'Tryb ciemny';
-      }
+      button.textContent = document.body.classList.contains('dark-mode') ? 'Tryb jasny' : 'Tryb ciemny';
     });
   </script>
 </body>
