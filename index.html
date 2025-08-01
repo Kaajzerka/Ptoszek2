@@ -18,8 +18,8 @@
     }
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 40px;
+      grid-template-columns: repeat(2, 1fr); /* 2 ptoszki w rzędzie */
+      gap: 40px 40px;
       justify-content: center;
     }
     .photo img {
@@ -70,13 +70,18 @@
   <div class="gallery">
     <div class="photo"><img src="ptoszek1.png" alt="Ptoszek 1" /></div>
     <div class="photo"><img src="ptoszek2.png" alt="Ptoszek 2" /></div>
+
     <div class="photo"><img src="ptoszek3.png" alt="Ptoszek 3" /></div>
     <div class="photo"><img src="ptoszek4.png" alt="Ptoszek 4" /></div>
+
     <div class="photo"><img src="ptoszek5.png" alt="Ptoszek 5" /></div>
     <div class="photo"><img src="ptoszek6.png" alt="Ptoszek 6" /></div>
+
     <div class="photo"><img src="ptoszek7.png" alt="Ptoszek 7" /></div>
     <div class="photo"><img src="ptoszek8.png" alt="Ptoszek 8" /></div>
+
     <div class="photo"><img src="ptoszek9.png" alt="Ptoszek 9" /></div>
+    <!-- Jeśli dodasz ptoszek10.png, utworzy parę z 9 -->
   </div>
 
   <script>
